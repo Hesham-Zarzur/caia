@@ -168,6 +168,7 @@
           <div class="row g-5">
             <div class="col-12 col-md-4 col-lg-3" v-for="nproduct in nproducts ">
               <div data-aos="zoom-out" class="pro card">
+                <div class="ribbon"><span>New</span></div>
                   <img v-bind:src="nproduct.url" alt="" />
                   <div class="card-body">
                     <h5 class="card-title head-text fs-4" v-text="nproduct.name" ></h5>
@@ -338,9 +339,6 @@
               {brand:"Brand name",name:"Product name", url:"assets/img/products/n4.png",price: "$85", quantity: 10},
             ]
           };
-        },
-        components:{
-          navBar,mineFooter
         },
         watch: {
           isDark(newVal) {
