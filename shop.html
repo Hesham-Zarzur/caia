@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CAIA Shop</title>
+    <title>Caia Shop</title>
     <!-- Link Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,8 +42,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Link Style -->
-    <link rel="stylesheet" href="assets/css/mainStyle.css" />
-    <link rel="stylesheet" href="assets/css/shopStyle.css" />
+    <link rel="stylesheet" href="css/mainStyle.css" />
+    <link rel="stylesheet" href="css/shopStyle.css" />
   </head>
 
   <body>
@@ -83,7 +83,7 @@
       <!-- products -->
       <section id="products" class="py-4">
         <div class="container mt-5">
-          <div class="row g-3">
+          <div class="row g-2">
             <div class="col-6 col-md-4 col-lg-3" v-for="product in products ">
               <div data-aos="zoom-out" class="pro card">
                 <img v-bind:src="product.url" alt="" />
@@ -243,7 +243,6 @@
       integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
     <script type="module">
       const app = Vue.createApp({
         data() {
@@ -366,12 +365,6 @@
         },
         mounted() {
           AOS.init();
-          Swal.fire({
-            position: "top",
-            title: " We wish you a pleasant shopping experience.",
-            showConfirmButton: false,
-            timer: 1300,
-          });
         },
         methods: {},
       });

@@ -1,0 +1,95 @@
+body.dark-mode {
+  --bg: #272228;
+  --nav: #272228;
+  --header-text: #e6ac19;
+  --main-text: #867f55;
+  --hero-gradient1: #200225;
+  --hero-gradient2: #413007;
+  --hero-gradient3: #330e00;
+  --hero-gradient4: #272228;
+}
+
+body.dark-mode .nav-links a::after {
+  background: linear-gradient(120deg, #e6ac19, #584b00, #e6ac19);
+  background-size: 400% 400%;
+  animation: gradientBG 2s ease-in-out infinite;
+  transition: transform 0.5s linear;
+}
+
+body.dark-mode .shopBtn {
+  background-image: url(../assets/img/button-y.png);
+}
+
+body.dark-mode .shopBtn:hover {
+  background-image: url(../assets/img/button-b.png);
+}
+
+body.dark-mode .pro {
+  background: rgba(68, 68, 68, 0.41);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.4px);
+  -webkit-backdrop-filter: blur(4.4px);
+  border: 0;
+}
+
+body.dark-mode .pro:hover {
+  background: rgba(0, 0, 0, 0.41);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.2px);
+  -webkit-backdrop-filter: blur(11.2px);
+}
+
+body.dark-mode .pro img {
+  mix-blend-mode: normal;
+}
+body.dark-mode .pro .btncart {
+  background-color: #272228;
+  color: #e6ac19;
+}
+body.dark-mode .pro .btncart:hover,
+body.dark-mode .pro .btncart:active {
+  background-color: #e6ac19;
+  color: #272228;
+}
+
+body.dark-mode #banner {
+  background-color: #272228;
+}
+
+body.dark-mode .obanar-text {
+  color: var(--nav) !important;
+}
+
+body.dark-mode .bbanar-text {
+  color: var(--header-text) !important;
+}
+
+body.dark-mode .bannerBtn {
+  border-color: var(--nav) !important;
+}
+
+body.dark-mode .bannerBtn:hover,
+.bannerBtn:active {
+  color: var(--header-text) !important;
+  background-color: var(--nav) !important;
+}
+
+body.dark-mode .wbannerBtn {
+  border-color: var(--header-text) !important;
+  color: var(--header-text) !important;
+}
+
+body.dark-mode .wbannerBtn:hover,
+body.dark-mode .wbannerBtn:active {
+  color: var(--nav) !important;
+  background-color: var(--header-text) !important;
+}
+
+body.dark-mode footer .line {
+  background: linear-gradient(120deg, #272228, #e6ac19, #272228);
+  background-size: 400% 400%;
+  animation: gradientBG 3s ease-in-out infinite;
+  transition: transform 0.5s linear;
+}

@@ -33,41 +33,69 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
 
-    <!-- Link AOS -->
+    <!-- Link Vue.js & Jquery -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.js"
+      integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+      crossorigin="anonymous">
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.js"
+      integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+      crossorigin="anonymous">
+    </script>
+
+    <!-- Link AOS & Animate.css-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- Link Style -->
-    <link rel="stylesheet" href="assets/css/mainStyle.css" />
-    <link rel="stylesheet" href="assets/css/homeStyle.css">
+    <link rel="stylesheet" href="css/mainStyle.css" />
+    <link rel="stylesheet" href="css/homeStyle.css"/>
+    <link rel="stylesheet" href="css/darkStyle.css"/>
 
-    <title>CAIA Shop</title>
+    <title>Caia Home</title>
   </head>
 
   <body>
     <div id="app">
       <!-- header -->
-      <header id="header">
+       <header id="header" >
         <nav class="navbar navbar-expand-md">
           <div class="container">
-            <a href="index.html"
-              ><img src="assets/img/logo.png" class="logo" alt=""
-            /></a>
-            <div>
+            <a href="index.html" role="link" class="logo main-text " title="Caia">
+              <span class="head-text">C</span>aia
+            </a>
+
+            <div >
               <ul id="navbar">
-                <li class="nav-links">
-                  <a class="active" href="index.html">Home</a>
-                </li>
+                <li class="nav-links"><a class="active" href="index.html">Home</a></li>
                 <li class="nav-links"><a href="shop.html">Shop</a></li>
                 <li class="nav-links"><a href="blog.html">Blog</a></li>
                 <li class="nav-links"><a href="about.html">About</a></li>
                 <li class="nav-links"><a href="contact.html">Contact</a></li>
               </ul>
             </div>
+
+            <div class="theme-switch-wrapper">
+              <label
+                class="theme-switch"
+                for="theme-toggle"
+                title="Toggle dark/light mode"
+              >
+                <span class="visually-hidden">Toggle dark or light mode</span>
+                <input type="checkbox" id="theme-toggle" v-model="isDark" />
+                <span class="slider-mood"></span>
+              </label>
+            </div>
+
+            
           </div>
         </nav>
       </header>
-    
+
       <!-- hero -->
       <section  id="hero" >
           <div class="row g-5">
@@ -93,12 +121,12 @@
       </section>
       
       <!-- feature -->
-      <section id="feature" data-aos="fade-up" data-aos-easing="linear"  data-aos-duration="1000"  class="my-5">
+      <section id="feature"  class="my-5">
           <div class="row" >
               <div class="col-4 col-md-3 col-lg-2" v-for=" feature in features" >
-                  <div class="fe-box">
-                      <img v-bind:src="feature.url" alt="" />
-                      <h6 v-text="feature.name" class="fs-5"></h6>
+                  <div class="fe-box" data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="1500" >
+                      <img v-bind:src="isDark ? feature.darkurl : feature.url " alt="" />
+                      <h5 v-text="feature.name" class="main-text"></h5>
                   </div>
               </div>
           </div>
@@ -107,12 +135,11 @@
       <!-- products -->
       <section id="products" class="py-4">
         <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
-          <h2 class="head-text text-center fs-1">Products</h2>
-          <p class="head-text  text-center fs-4 ">Summer Collection</p>
+          <p class="head-text  text-center fs-1 ">Summer Collection</p>
         </div>
         <div class="container mt-5 ">
-          <div class="row g-5">
-            <div class="col-12 col-md-4 col-lg-3" v-for="product in products ">
+          <div class="row g-2">
+            <div class="col-6 col-md-4 col-lg-3" v-for="product in products ">
               <div data-aos="zoom-out" class="pro card">
                   <img v-bind:src="product.url" alt="" />
                   <div class="card-body">
@@ -128,16 +155,15 @@
       </section>
     
       <!-- banner -->
-      <section id="banner" data-aos="zoom-in-down" data-aos-easing="linear" data-aos-duration="1000"  class="my-5">
-        <h4 data-aos="zoom-out-down" class="wmain-text fs-2 mb-4 ">Repair services</h4>
-        <h2 data-aos="zoom-out-right" class="wmain-text">up to <span class="head-text fs-2 ">70%off</span> - All T-Shirts & accessories</h2>
-        <a data-aos="zoom-out-left" href="/shop.html" role="" class="exploreBtn head-text fs-4">Explore more</a>
+      <section id="banner"  class="my-5">
+        <h4 data-aos="zoom-out-down" data-aos-easing="linear" class="main-text fs-2 mb-4 ">Repair services</h4>
+        <h2 data-aos="zoom-out-right" data-aos-easing="linear" class="main-text">up to <span class="head-text fs-2 ">70%off</span> - All T-Shirts & accessories</h2>
+        <a data-aos="zoom-out-left" data-aos-easing="linear" href="/shop.html" role="" class="exploreBtn head-text fs-4">Explore more</a>
       </section>
       
       <!-- New products -->
       <section id="newProducts" class="py-4">
         <h2 class="head-text text-center fs-1">New Arrivals</h2>
-        <p class="head-text  text-center fs-4 ">Summer Collection - New Modern Design</p>
         <div class="container mt-5">
           <div class="row g-5">
             <div class="col-12 col-md-4 col-lg-3" v-for="nproduct in nproducts ">
@@ -160,36 +186,38 @@
         <div class="row g-5">
           <div class="col-12 col-md-6">
             <div data-aos="flip-left" class="banner-box m-4">
-              <h4 class="head-text fs-4 ">crazy deals</h4>
-              <h3 class="head-text">
+              <h4  class="obanar-text fs-4 ">crazy deals</h4>
+              <h3  class="obanar-text">
                   buy 1 get 1 
                 <span class="main-text fs-3 fw-bold">free</span>
               </h3>
-              <span class="head-text ">the bast classic dress is on sale at care</span>
-              <a href="/shop.html" role="button" class="bannerBtn head-text">Learn More</a>
+              <span  class="obanar-text ">the bast classic dress is on sale at care</span>
+              <a href="/shop.html" role="button" class="bannerBtn obanar-text">Learn More</a>
             </div>
           </div>
+          
           <div class="col-12 col-md-6">
             <div data-aos="flip-right"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="2000" class="banner-box banner-box2 m-4">
-              <h4 class="wmain-text fs-3  ">spring | summer</h4>
-              <h2 class="wmain-text fs-4 ">upcomming season</h2>
-              <span class="wmain-text fs-5 ">the bast classic dress is on sale at care</span>
-              <a href="/shop.html" class="bannerBtn wbannerBtn main-text">Collection</a>
+              <h4  class="bbanar-text fs-2  ">spring | summer</h4>
+              <h2  class="bbanar-text fs-3 ">upcomming season</h2>
+              <span  class="bbanar-text fs-4 ">the bast classic dress is on sale at care</span>
+              <a href="/shop.html" class="bannerBtn wbannerBtn ">Collection</a>
             </div>
           </div>
         </div>
       </section>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#283b47" fill-opacity="1" d="M0,192L0,224L36.9,224L36.9,224L73.8,224L73.8,256L110.8,256L110.8,32L147.7,32L147.7,224L184.6,224L184.6,0L221.5,0L221.5,256L258.5,256L258.5,224L295.4,224L295.4,224L332.3,224L332.3,96L369.2,96L369.2,64L406.2,64L406.2,224L443.1,224L443.1,128L480,128L480,192L516.9,192L516.9,64L553.8,64L553.8,224L590.8,224L590.8,64L627.7,64L627.7,192L664.6,192L664.6,0L701.5,0L701.5,320L738.5,320L738.5,64L775.4,64L775.4,96L812.3,96L812.3,160L849.2,160L849.2,64L886.2,64L886.2,96L923.1,96L923.1,64L960,64L960,32L996.9,32L996.9,224L1033.8,224L1033.8,288L1070.8,288L1070.8,32L1107.7,32L1107.7,224L1144.6,224L1144.6,32L1181.5,32L1181.5,96L1218.5,96L1218.5,32L1255.4,32L1255.4,288L1292.3,288L1292.3,288L1329.2,288L1329.2,32L1366.2,32L1366.2,96L1403.1,96L1403.1,256L1440,256L1440,0L1403.1,0L1403.1,0L1366.2,0L1366.2,0L1329.2,0L1329.2,0L1292.3,0L1292.3,0L1255.4,0L1255.4,0L1218.5,0L1218.5,0L1181.5,0L1181.5,0L1144.6,0L1144.6,0L1107.7,0L1107.7,0L1070.8,0L1070.8,0L1033.8,0L1033.8,0L996.9,0L996.9,0L960,0L960,0L923.1,0L923.1,0L886.2,0L886.2,0L849.2,0L849.2,0L812.3,0L812.3,0L775.4,0L775.4,0L738.5,0L738.5,0L701.5,0L701.5,0L664.6,0L664.6,0L627.7,0L627.7,0L590.8,0L590.8,0L553.8,0L553.8,0L516.9,0L516.9,0L480,0L480,0L443.1,0L443.1,0L406.2,0L406.2,0L369.2,0L369.2,0L332.3,0L332.3,0L295.4,0L295.4,0L258.5,0L258.5,0L221.5,0L221.5,0L184.6,0L184.6,0L147.7,0L147.7,0L110.8,0L110.8,0L73.8,0L73.8,0L36.9,0L36.9,0L0,0L0,0Z"></path></svg>
-    
+      <svg v-if="isDark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#272228" fill-opacity="1" d="M0,128L0,224L53.3,224L53.3,32L106.7,32L106.7,32L160,32L160,160L213.3,160L213.3,320L266.7,320L266.7,192L320,192L320,32L373.3,32L373.3,224L426.7,224L426.7,192L480,192L480,128L533.3,128L533.3,256L586.7,256L586.7,224L640,224L640,192L693.3,192L693.3,288L746.7,288L746.7,0L800,0L800,288L853.3,288L853.3,128L906.7,128L906.7,128L960,128L960,96L1013.3,96L1013.3,32L1066.7,32L1066.7,32L1120,32L1120,96L1173.3,96L1173.3,288L1226.7,288L1226.7,32L1280,32L1280,96L1333.3,96L1333.3,192L1386.7,192L1386.7,256L1440,256L1440,0L1386.7,0L1386.7,0L1333.3,0L1333.3,0L1280,0L1280,0L1226.7,0L1226.7,0L1173.3,0L1173.3,0L1120,0L1120,0L1066.7,0L1066.7,0L1013.3,0L1013.3,0L960,0L960,0L906.7,0L906.7,0L853.3,0L853.3,0L800,0L800,0L746.7,0L746.7,0L693.3,0L693.3,0L640,0L640,0L586.7,0L586.7,0L533.3,0L533.3,0L480,0L480,0L426.7,0L426.7,0L373.3,0L373.3,0L320,0L320,0L266.7,0L266.7,0L213.3,0L213.3,0L160,0L160,0L106.7,0L106.7,0L53.3,0L53.3,0L0,0L0,0Z"></path></svg>
+      <svg v-if="!isDark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#283b47" fill-opacity="1" d="M0,128L0,224L53.3,224L53.3,32L106.7,32L106.7,32L160,32L160,160L213.3,160L213.3,320L266.7,320L266.7,192L320,192L320,32L373.3,32L373.3,224L426.7,224L426.7,192L480,192L480,128L533.3,128L533.3,256L586.7,256L586.7,224L640,224L640,192L693.3,192L693.3,288L746.7,288L746.7,0L800,0L800,288L853.3,288L853.3,128L906.7,128L906.7,128L960,128L960,96L1013.3,96L1013.3,32L1066.7,32L1066.7,32L1120,32L1120,96L1173.3,96L1173.3,288L1226.7,288L1226.7,32L1280,32L1280,96L1333.3,96L1333.3,192L1386.7,192L1386.7,256L1440,256L1440,0L1386.7,0L1386.7,0L1333.3,0L1333.3,0L1280,0L1280,0L1226.7,0L1226.7,0L1173.3,0L1173.3,0L1120,0L1120,0L1066.7,0L1066.7,0L1013.3,0L1013.3,0L960,0L960,0L906.7,0L906.7,0L853.3,0L853.3,0L800,0L800,0L746.7,0L746.7,0L693.3,0L693.3,0L640,0L640,0L586.7,0L586.7,0L533.3,0L533.3,0L480,0L480,0L426.7,0L426.7,0L373.3,0L373.3,0L320,0L320,0L266.7,0L266.7,0L213.3,0L213.3,0L160,0L160,0L106.7,0L106.7,0L53.3,0L53.3,0L0,0L0,0Z"></path></svg>
+
       <!-- newsletter -->
       <section id="newsletter" class="mb-5">
         <div class="container">
           <div class="row">
             <div class="col-12 col-md-6 py-5">
               <h4 class="head-text text-center fs-1">Sign Up For newsletters</h4>
-              <p class="wmain-text text-center fs-3">Get E-mail updates about our latest 
+              <p class="main-text text-center fs-3">Get E-mail updates about our latest 
                 our latest shop and 
                 <span class="head-text">special offers</span>.
               </p>
@@ -203,7 +231,7 @@
                   required placeholder="name@example.com" />
                   <label class="head-text fw-bold" for="floatingInput">Email address</label>
                 </div>
-                <button type="submit" class="submitbtn head-text">submit</button>
+                <button type="submit" class="submitbtn head-text fs-5">submit</button>
               </form>
             </div>
           </div>
@@ -211,7 +239,8 @@
       </section>
     
       <!-- footer -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#283b47" fill-opacity="1" d="M0,192L0,224L36.9,224L36.9,224L73.8,224L73.8,256L110.8,256L110.8,32L147.7,32L147.7,224L184.6,224L184.6,0L221.5,0L221.5,256L258.5,256L258.5,224L295.4,224L295.4,224L332.3,224L332.3,96L369.2,96L369.2,64L406.2,64L406.2,224L443.1,224L443.1,128L480,128L480,192L516.9,192L516.9,64L553.8,64L553.8,224L590.8,224L590.8,64L627.7,64L627.7,192L664.6,192L664.6,0L701.5,0L701.5,320L738.5,320L738.5,64L775.4,64L775.4,96L812.3,96L812.3,160L849.2,160L849.2,64L886.2,64L886.2,96L923.1,96L923.1,64L960,64L960,32L996.9,32L996.9,224L1033.8,224L1033.8,288L1070.8,288L1070.8,32L1107.7,32L1107.7,224L1144.6,224L1144.6,32L1181.5,32L1181.5,96L1218.5,96L1218.5,32L1255.4,32L1255.4,288L1292.3,288L1292.3,288L1329.2,288L1329.2,32L1366.2,32L1366.2,96L1403.1,96L1403.1,256L1440,256L1440,320L1403.1,320L1403.1,320L1366.2,320L1366.2,320L1329.2,320L1329.2,320L1292.3,320L1292.3,320L1255.4,320L1255.4,320L1218.5,320L1218.5,320L1181.5,320L1181.5,320L1144.6,320L1144.6,320L1107.7,320L1107.7,320L1070.8,320L1070.8,320L1033.8,320L1033.8,320L996.9,320L996.9,320L960,320L960,320L923.1,320L923.1,320L886.2,320L886.2,320L849.2,320L849.2,320L812.3,320L812.3,320L775.4,320L775.4,320L738.5,320L738.5,320L701.5,320L701.5,320L664.6,320L664.6,320L627.7,320L627.7,320L590.8,320L590.8,320L553.8,320L553.8,320L516.9,320L516.9,320L480,320L480,320L443.1,320L443.1,320L406.2,320L406.2,320L369.2,320L369.2,320L332.3,320L332.3,320L295.4,320L295.4,320L258.5,320L258.5,320L221.5,320L221.5,320L184.6,320L184.6,320L147.7,320L147.7,320L110.8,320L110.8,320L73.8,320L73.8,320L36.9,320L36.9,320L0,320L0,320Z"></path></svg>
+       <svg v-if="isDark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#272228" fill-opacity="1" d="M0,128L0,224L53.3,224L53.3,32L106.7,32L106.7,32L160,32L160,160L213.3,160L213.3,320L266.7,320L266.7,192L320,192L320,32L373.3,32L373.3,224L426.7,224L426.7,192L480,192L480,128L533.3,128L533.3,256L586.7,256L586.7,224L640,224L640,192L693.3,192L693.3,288L746.7,288L746.7,0L800,0L800,288L853.3,288L853.3,128L906.7,128L906.7,128L960,128L960,96L1013.3,96L1013.3,32L1066.7,32L1066.7,32L1120,32L1120,96L1173.3,96L1173.3,288L1226.7,288L1226.7,32L1280,32L1280,96L1333.3,96L1333.3,192L1386.7,192L1386.7,256L1440,256L1440,320L1386.7,320L1386.7,320L1333.3,320L1333.3,320L1280,320L1280,320L1226.7,320L1226.7,320L1173.3,320L1173.3,320L1120,320L1120,320L1066.7,320L1066.7,320L1013.3,320L1013.3,320L960,320L960,320L906.7,320L906.7,320L853.3,320L853.3,320L800,320L800,320L746.7,320L746.7,320L693.3,320L693.3,320L640,320L640,320L586.7,320L586.7,320L533.3,320L533.3,320L480,320L480,320L426.7,320L426.7,320L373.3,320L373.3,320L320,320L320,320L266.7,320L266.7,320L213.3,320L213.3,320L160,320L160,320L106.7,320L106.7,320L53.3,320L53.3,320L0,320L0,320Z"></path></svg>
+      <svg v-if="!isDark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#283b47" fill-opacity="1" d="M0,128L0,224L53.3,224L53.3,32L106.7,32L106.7,32L160,32L160,160L213.3,160L213.3,320L266.7,320L266.7,192L320,192L320,32L373.3,32L373.3,224L426.7,224L426.7,192L480,192L480,128L533.3,128L533.3,256L586.7,256L586.7,224L640,224L640,192L693.3,192L693.3,288L746.7,288L746.7,0L800,0L800,288L853.3,288L853.3,128L906.7,128L906.7,128L960,128L960,96L1013.3,96L1013.3,32L1066.7,32L1066.7,32L1120,32L1120,96L1173.3,96L1173.3,288L1226.7,288L1226.7,32L1280,32L1280,96L1333.3,96L1333.3,192L1386.7,192L1386.7,256L1440,256L1440,320L1386.7,320L1386.7,320L1333.3,320L1333.3,320L1280,320L1280,320L1226.7,320L1226.7,320L1173.3,320L1173.3,320L1120,320L1120,320L1066.7,320L1066.7,320L1013.3,320L1013.3,320L960,320L960,320L906.7,320L906.7,320L853.3,320L853.3,320L800,320L800,320L746.7,320L746.7,320L693.3,320L693.3,320L640,320L640,320L586.7,320L586.7,320L533.3,320L533.3,320L480,320L480,320L426.7,320L426.7,320L373.3,320L373.3,320L320,320L320,320L266.7,320L266.7,320L213.3,320L213.3,320L160,320L160,320L106.7,320L106.7,320L53.3,320L53.3,320L0,320L0,320Z"></path></svg>
       <footer class="">
         <div class="container">
           <div class="row g-3">
@@ -219,35 +248,37 @@
             <div data-aos="fade-right"
                 data-aos-easing="linear"
                 data-aos-duration="1500" class="col-12">
-              <img class="logo" src="/assets/img/logo.png" alt="Logo" />
+                <a href="index.html" role="link" class="logo main-text " title="Caia">
+              <span class="head-text">C</span>aia
+            </a>
             </div>
           
             <!-- Contact -->
-            <div data-aos="fade-up"
+            <div data-aos="fade-right"
                 data-aos-easing="linear"
-                data-aos-duration="3000" class="col-12 col-md-6 col-lg-4">
+                data-aos-duration="1500" class="col-12 col-md-6 col-lg-4">
               <h4 class="head-text fs-2">Contact</h4>
-              <p class="fs-5 wmain-text"><span class="head-text fs-4 fw-bolder">Address : </span>Wallington Road, Street 32, San Francisco</p>
-              <p class="fs-5 wmain-text"><span class="head-text fs-4 fw-bolder">Phone: </span>123-456-789</p>
-              <p class="fs-5 wmain-text"><span class="head-text fs-4 fw-bolder">Hours: </span>10:00 - 18:00, Mon - Sat</p>
+              <p class="fs-5 main-text"><span class="head-text fs-4 fw-bolder">Address : </span>Wallington Road, Street 32, San Francisco</p>
+              <p class="fs-5 main-text"><span class="head-text fs-4 fw-bolder">Phone: </span>123-456-789</p>
+              <p class="fs-5 main-text"><span class="head-text fs-4 fw-bolder">Hours: </span>10:00 - 18:00, Mon - Sat</p>
             </div>
             
             <!-- About Us -->
-            <div data-aos="fade-up"
+            <div data-aos="fade-right"
                  data-aos-easing="linear"
-                data-aos-duration="3000" class="col-12 col-md-6 col-lg-4">
-              <h4 class="head-text fs-2">CASA Store</h4>
-              <a class ="f-link head-text fs-4 fw-bolder" href="#">About Us</a>
-              <a class ="f-link head-text fs-4 fw-bolder" href="#">Contact Us</a>
-              <a class ="f-link head-text fs-4 fw-bolder" href="#">Privacy Policy</a>
-              <a class ="f-link head-text fs-4 fw-bolder" href="#">Terms & Conditions</a>
-              <a class ="f-link head-text fs-4 fw-bolder" href="#">Delivery Information</a>
+                data-aos-duration="1500" class="col-12 col-md-6 col-lg-4">
+              <h4 class="head-text fs-2">CAIA Store</h4>
+              <a class ="f-link main-text fs-4 fw-bolder" href="#">About Us</a>
+              <a class ="f-link main-text fs-4 fw-bolder" href="#">Contact Us</a>
+              <a class ="f-link main-text fs-4 fw-bolder" href="#">Privacy Policy</a>
+              <a class ="f-link main-text fs-4 fw-bolder" href="#">Terms & Conditions</a>
+              <a class ="f-link main-text fs-4 fw-bolder" href="#">Delivery Information</a>
             </div>
           
             <!-- follow -->
             <div data-aos="fade-up"
                 data-aos-easing="linear"
-                data-aos-duration="3000" class="col-12 col-lg-4">
+                data-aos-duration="1500" class="col-12 col-lg-4">
               <div class="follow">
                 <h4 class="head-text fs-2 text-center">Follow Us</h4>
                 <div class="icon">
@@ -265,64 +296,94 @@
       </footer>
     </div>
     
-    <!-- Link Vue.js & Jquery -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.slim.js"
-      integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
-      crossorigin="anonymous">
-    </script>
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.slim.js"
-      integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
-      crossorigin="anonymous">
-    </script>
-    <script src="script.js"></script>
+    
+    <script src="JS/script.js"></script>
     <script type="module">
+      import navBar from "./JS/Components/navBar.js";
+      import mineFooter from "./JS/Components/mineFooter.js";
       const app = Vue.createApp({
         data() {
           return {
+            isDark: localStorage.getItem("theme") === "dark",
             images: [
-                        "assets/img/hero/f1.png",
-                        "assets/img/hero/f8.png",
-                        "assets/img/hero/n2.png",
-                        "assets/img/hero/n6.png",
+                        "assets/img/products/f1.png",
+                        "assets/img/products/f2.png",
+                        "assets/img/products/f3.png",
+                        "assets/img/products/f4.png",
+                        "assets/img/products/f5.png",
                     ],
             currentIndex: 0,
             features:[
-                {name:"Free Shipping", url:"assets/img/features/f1.png"},
-                {name:"Online Order", url:"assets/img/features/f2.png"},
-                {name:"Save Money", url:"assets/img/features/f3.png"},
-                {name:"Promotions", url:"assets/img/features/f4.png"},
-                {name:"Happy Sale", url:"assets/img/features/f5.png"},
-                {name:"24/7 Support", url:"assets/img/features/f6.png"},
+                {name:"Free Shipping", url:"assets/img/features/f1.png" , darkurl:"assets/img/features/d-f1.png" },
+                {name:"Online Order", url:"assets/img/features/f2.png" , darkurl:"assets/img/features/d-f2.png" },
+                {name:"Save Money", url:"assets/img/features/f3.png" , darkurl:"assets/img/features/d-f3.png" },
+                {name:"Promotions", url:"assets/img/features/f4.png" , darkurl:"assets/img/features/d-f4.png" },
+                {name:"Happy Sale", url:"assets/img/features/f5.png" , darkurl:"assets/img/features/d-f5.png" },
+                {name:"24/7 Support", url:"assets/img/features/f6.png" , darkurl:"assets/img/features/d-f6.png" },
             ],
             products: [
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f1.jpg",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f2.jpg",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f3.jpg",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f4.jpg",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f5.jpg",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f6.jpg",price: "$99", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f7.jpg",price: "$54", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f8.jpg",price: "$35", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f1.png",price: "$85", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f2.png",price: "$85", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f3.png",price: "$85", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f4.png",price: "$85", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f5.png",price: "$85", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f6.png",price: "$99", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f7.png",price: "$54", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f8.png",price: "$35", quantity: 10},
             ],
             nproducts: [
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/n1.jpg",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/n2.jpg",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/n3.jpg",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/n4.jpg",price: "$85", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/n1.png",price: "$85", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/n2.png",price: "$85", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/n3.png",price: "$85", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/n4.png",price: "$85", quantity: 10},
             ]
           };
         },
+        components:{
+          navBar,mineFooter
+        },
+        watch: {
+          isDark(newVal) {
+            if (newVal) {
+              document.body.classList.add("dark-mode");
+              localStorage.setItem("theme", "dark");
+              console.log("Dark mode enabled");
+              return true;
+            } else {
+              document.body.classList.remove("dark-mode");
+              localStorage.setItem("theme", "light");
+              console.log("Light mode enabled");
+              return false;
+            }
+          },
+        },
         mounted() {
           AOS.init();
+          if (this.isDark) {
+            document.body.classList.add("dark-mode");
+          }
+
           setInterval(this.nextImage, 5000);
+
           Swal.fire({
             position: "top",
-            title: " We wish you a pleasant shopping experience.",
+            title: " Welcome to Caia ✨ Discover unique finds & shop with confidence🚀",
             showConfirmButton: false,
-            timer: 1300,
+            timer: 2000,
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInDown
+                
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutUp
+                
+              `
+            }
           });
         },
         methods: {
