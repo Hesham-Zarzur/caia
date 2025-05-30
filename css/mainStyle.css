@@ -226,6 +226,32 @@ a.active::after {
   mix-blend-mode: darken;
 }
 
+.ribbon {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 140px;
+  padding: 5px 0;
+  background-color: var(--header-text);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  transform: rotate(45deg);
+  top: 20px;
+  right: -35px;
+  font-size: 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
 .pro .btncart {
   transition: 0.5s;
   padding: 0 46%;

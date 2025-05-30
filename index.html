@@ -103,7 +103,7 @@
               <div class="inner">
                   <div class="slider">
                       <div class="slides">
-                          <img v-for="(image, i) in images" :src="image" :class="{ active: i === currentIndex }">
+                          <img loading="lazy"  v-for="(image, i) in images" :src="image" :class="{ active: i === currentIndex }">
                       </div>
                   </div>
                   <div class="dots">
@@ -125,7 +125,7 @@
           <div class="row" >
               <div class="col-4 col-md-3 col-lg-2" v-for=" feature in features" >
                   <div class="fe-box" data-aos="fade-down" data-aos-easing="linear"  data-aos-duration="1500" >
-                      <img v-bind:src="isDark ? feature.darkurl : feature.url " alt="" />
+                      <img loading="lazy" v-bind:src="isDark ? feature.darkurl : feature.url " alt="" />
                       <h5 v-text="feature.name" class="main-text"></h5>
                   </div>
               </div>
@@ -141,7 +141,7 @@
           <div class="row g-2">
             <div class="col-6 col-md-4 col-lg-3" v-for="product in products ">
               <div data-aos="zoom-out" class="pro card">
-                  <img v-bind:src="product.url" alt="" />
+                  <img loading="lazy" v-bind:src="product.url" alt="" />
                   <div class="card-body">
                     <h5 class="card-title head-text fs-4" v-text="product.name" ></h5>
                     <span class="card-text text-secondary fs-5 " v-text="product.brand"></span>
@@ -169,7 +169,7 @@
             <div class="col-12 col-md-4 col-lg-3" v-for="nproduct in nproducts ">
               <div data-aos="zoom-out" class="pro card">
                 <div class="ribbon"><span>New</span></div>
-                  <img v-bind:src="nproduct.url" alt="" />
+                  <img loading="lazy" v-bind:src="nproduct.url" alt="" />
                   <div class="card-body">
                     <h5 class="card-title head-text fs-4" v-text="nproduct.name" ></h5>
                     <span class="card-text text-secondary fs-5 " v-text="nproduct.brand"></span>

@@ -44,6 +44,7 @@
     <!-- Link Style -->
     <link rel="stylesheet" href="css/mainStyle.css" />
     <link rel="stylesheet" href="css/shopStyle.css" />
+    <link rel="stylesheet" href="css/darkStyle.css" />
   </head>
 
   <body>
@@ -52,29 +53,46 @@
       <header id="header">
         <nav class="navbar navbar-expand-md">
           <div class="container">
-            <a href="index.html"
-              ><img src="assets/img/logo.png" class="logo" alt=""
-            /></a>
+            <a
+              href="index.html"
+              role="link"
+              class="logo main-text"
+              title="Caia"
+            >
+              <span class="head-text">C</span>aia
+            </a>
+
             <div>
               <ul id="navbar">
                 <li class="nav-links">
-                  <a href="index.html">Home</a>
+                  <a class="active" href="index.html">Home</a>
                 </li>
-                <li class="nav-links">
-                  <a class="active" href="shop.html">Shop</a>
-                </li>
+                <li class="nav-links"><a href="shop.html">Shop</a></li>
                 <li class="nav-links"><a href="blog.html">Blog</a></li>
                 <li class="nav-links"><a href="about.html">About</a></li>
                 <li class="nav-links"><a href="contact.html">Contact</a></li>
               </ul>
             </div>
+
+            <div class="theme-switch-wrapper">
+              <label
+                class="theme-switch"
+                for="theme-toggle"
+                title="Toggle dark/light mode"
+              >
+                <span class="visually-hidden">Toggle dark or light mode</span>
+                <input type="checkbox" id="theme-toggle" v-model="isDark" />
+                <span class="slider-mood"></span>
+              </label>
+            </div>
           </div>
         </nav>
       </header>
 
+      <!-- page header -->
       <section id="page-header">
         <h2 class="head-text fs-1">Stayhome</h2>
-        <p class="wmain-text fs-3">
+        <p class="main-text fs-3">
           Save more with coupons & up to<span class="head-text fs-2"> 70% </span
           >off!
         </p>
@@ -85,7 +103,15 @@
         <div class="container mt-5">
           <div class="row g-2">
             <div class="col-6 col-md-4 col-lg-3" v-for="product in products ">
-              <div data-aos="zoom-out" class="pro card">
+              <div
+                class="pro card"
+                data-aos="zoom-out"
+                data-aos-easing="linear"
+                data-aos-duration="1000"
+              >
+                <div v-if="product.status === 'new'" class="ribbon">
+                  <span>New</span>
+                </div>
                 <img v-bind:src="product.url" alt="" />
                 <div class="card-body">
                   <h5
@@ -158,28 +184,35 @@
             <div
               data-aos="fade-right"
               data-aos-easing="linear"
-              data-aos-duration="1000"
+              data-aos-duration="1500"
               class="col-12"
             >
-              <img class="logo" src="/assets/img/logo.png" alt="Logo" />
+              <a
+                href="index.html"
+                role="link"
+                class="logo main-text"
+                title="Caia"
+              >
+                <span class="head-text">C</span>aia
+              </a>
             </div>
 
             <!-- Contact -->
             <div
-              data-aos="fade-up"
+              data-aos="fade-right"
               data-aos-easing="linear"
-              data-aos-duration="1000"
+              data-aos-duration="1500"
               class="col-12 col-md-6 col-lg-4"
             >
               <h4 class="head-text fs-2">Contact</h4>
-              <p class="fs-5 wmain-text">
+              <p class="fs-5 main-text">
                 <span class="head-text fs-4 fw-bolder">Address : </span
                 >Wallington Road, Street 32, San Francisco
               </p>
-              <p class="fs-5 wmain-text">
+              <p class="fs-5 main-text">
                 <span class="head-text fs-4 fw-bolder">Phone: </span>123-456-789
               </p>
-              <p class="fs-5 wmain-text">
+              <p class="fs-5 main-text">
                 <span class="head-text fs-4 fw-bolder">Hours: </span>10:00 -
                 18:00, Mon - Sat
               </p>
@@ -187,21 +220,21 @@
 
             <!-- About Us -->
             <div
-              data-aos="fade-up"
+              data-aos="fade-right"
               data-aos-easing="linear"
-              data-aos-duration="1000"
+              data-aos-duration="1500"
               class="col-12 col-md-6 col-lg-4"
             >
-              <h4 class="head-text fs-2">CASA Store</h4>
-              <a class="f-link head-text fs-4 fw-bolder" href="#">About Us</a>
-              <a class="f-link head-text fs-4 fw-bolder" href="#">Contact Us</a>
-              <a class="f-link head-text fs-4 fw-bolder" href="#"
+              <h4 class="head-text fs-2">CAIA Store</h4>
+              <a class="f-link main-text fs-4 fw-bolder" href="#">About Us</a>
+              <a class="f-link main-text fs-4 fw-bolder" href="#">Contact Us</a>
+              <a class="f-link main-text fs-4 fw-bolder" href="#"
                 >Privacy Policy</a
               >
-              <a class="f-link head-text fs-4 fw-bolder" href="#"
+              <a class="f-link main-text fs-4 fw-bolder" href="#"
                 >Terms & Conditions</a
               >
-              <a class="f-link head-text fs-4 fw-bolder" href="#"
+              <a class="f-link main-text fs-4 fw-bolder" href="#"
                 >Delivery Information</a
               >
             </div>
@@ -210,7 +243,7 @@
             <div
               data-aos="fade-up"
               data-aos-easing="linear"
-              data-aos-duration="3000"
+              data-aos-duration="1500"
               class="col-12 col-lg-4"
             >
               <div class="follow">
@@ -226,7 +259,7 @@
           </div>
           <div class="line mb-2"></div>
           <p class="head-text text-center m-0 fs-5 pb-2">
-            &copy; CASA STORE 2025
+            &copy; CAIA STORE 2025
           </p>
         </div>
       </footer>
@@ -247,124 +280,159 @@
       const app = Vue.createApp({
         data() {
           return {
+            isDark: localStorage.getItem("theme") === "dark",
             products: [
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/f1.jpg",
+                url: "assets/img/products/f1.png",
                 price: "$85",
                 quantity: 10,
+                status: "old",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/f2.jpg",
+                url: "assets/img/products/f2.png",
                 price: "$85",
                 quantity: 10,
+                status: "new",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/f3.jpg",
+                url: "assets/img/products/f3.png",
                 price: "$85",
                 quantity: 10,
+                status: "old",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/f4.jpg",
+                url: "assets/img/products/f4.png",
                 price: "$85",
                 quantity: 10,
+                status: "new",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/f5.jpg",
+                url: "assets/img/products/f5.png",
                 price: "$85",
                 quantity: 10,
+                status: "new",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/f6.jpg",
+                url: "assets/img/products/f6.png",
                 price: "$99",
                 quantity: 10,
+                status: "old",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/f7.jpg",
+                url: "assets/img/products/f7.png",
                 price: "$54",
                 quantity: 10,
+                status: "old",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/f8.jpg",
+                url: "assets/img/products/f8.png",
                 price: "$35",
                 quantity: 10,
+                status: "new",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/n1.jpg",
+                url: "assets/img/products/n1.png",
                 price: "$85",
                 quantity: 10,
+                status: "new",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/n2.jpg",
+                url: "assets/img/products/n2.png",
                 price: "$85",
                 quantity: 10,
+                status: "new",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/n3.jpg",
+                url: "assets/img/products/n3.png",
                 price: "$85",
                 quantity: 10,
+                status: "new",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/n4.jpg",
+                url: "assets/img/products/n4.png",
                 price: "$85",
                 quantity: 10,
+                status: "new",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/n5.jpg",
+                url: "assets/img/products/n5.png",
                 price: "$85",
                 quantity: 10,
+                status: "new",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/n6.jpg",
+                url: "assets/img/products/n6.png",
                 price: "$99",
                 quantity: 10,
+                status: "new",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/n7.jpg",
+                url: "assets/img/products/n7.png",
                 price: "$54",
                 quantity: 10,
+                status: "new",
               },
               {
                 brand: "Brand name",
                 name: "Product name",
-                url: "assets/img/products/n8.jpg",
+                url: "assets/img/products/n8.png",
                 price: "$35",
                 quantity: 10,
+                status: "new",
               },
             ],
           };
         },
+        watch: {
+          isDark(newVal) {
+            if (newVal) {
+              document.body.classList.add("dark-mode");
+              localStorage.setItem("theme", "dark");
+              console.log("Dark mode enabled");
+              return true;
+            } else {
+              document.body.classList.remove("dark-mode");
+              localStorage.setItem("theme", "light");
+              console.log("Light mode enabled");
+              return false;
+            }
+          },
+        },
         mounted() {
           AOS.init();
+          if (this.isDark) {
+            document.body.classList.add("dark-mode");
+          }
         },
         methods: {},
       });
