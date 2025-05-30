@@ -144,6 +144,9 @@
           <div class="row g-2">
             <div class="col-6 col-md-4 col-lg-3" v-for="product in products ">
               <div data-aos="zoom-out" class="pro card">
+                <div v-if="product.status === 'new'" class="ribbon">
+                  <span>New</span>
+                 </div>
                   <img loading="lazy" v-bind:src="product.url" alt="" />
                   <div class="card-body">
                     <h5 class="card-title head-text fs-4" v-text="product.name" ></h5>
@@ -171,7 +174,9 @@
           <div class="row g-5">
             <div class="col-12 col-md-4 col-lg-3" v-for="nproduct in nproducts ">
               <div data-aos="zoom-out" class="pro card">
-                <div class="ribbon"><span>New</span></div>
+                 <div v-if="nproduct.status === 'new'" class="ribbon">
+                  <span>New</span>
+                 </div>
                   <img loading="lazy" v-bind:src="nproduct.url" alt="" />
                   <div class="card-body">
                     <h5 class="card-title head-text fs-4" v-text="nproduct.name" ></h5>
@@ -326,21 +331,21 @@
                 {name:"24/7 Support", url:"assets/img/features/f6.png" , darkurl:"assets/img/features/d-f6.png" },
             ],
             products: [
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f1.png",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f2.png",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f3.png",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f4.png",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f5.png",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f6.png",price: "$99", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f7.png",price: "$54", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/f8.png",price: "$35", quantity: 10},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f1.png",price: "$85", quantity: 10,status: "old",},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f2.png",price: "$85", quantity: 10,status: "old",},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f3.png",price: "$85", quantity: 10,status: "old",},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f4.png",price: "$85", quantity: 10,status: "old",},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f5.png",price: "$85", quantity: 10,status: "old",},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f6.png",price: "$99", quantity: 10,status: "new",},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f7.png",price: "$54", quantity: 10,status: "old",},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/f8.png",price: "$35", quantity: 10,status: "new",},
+              
             ],
-            nproducts: [
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/n1.png",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/n2.png",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/n3.png",price: "$85", quantity: 10},
-              {brand:"Brand name",name:"Product name", url:"assets/img/products/n4.png",price: "$85", quantity: 10},
-            ]
+            nproducts:[
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/n1.png",price: "$85", quantity: 10,status: "new",},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/n2.png",price: "$85", quantity: 10,status: "new",},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/n3.png",price: "$85", quantity: 10,status: "new",},
+              {brand:"Brand name",name:"Product name", url:"assets/img/products/n4.png",price: "$85", quantity: 10,status: "new",},]
           };
         },
         watch: {
