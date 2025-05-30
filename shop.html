@@ -53,37 +53,40 @@
       <header id="header">
         <nav class="navbar navbar-expand-md">
           <div class="container">
-            <a
-              href="index.html"
-              role="link"
-              class="logo main-text"
-              title="Caia"
+            <div
+              class="d-flex w-100 justify-content-between align-items-center"
             >
-              <span class="head-text">C</span>aia
-            </a>
+              <a
+                href="index.html"
+                role="link"
+                class="logo main-text"
+                title="Caia"
+              >
+                <span class="head-text">C</span>aia
+              </a>
+              <div class="theme-switch-wrapper">
+                <label
+                  class="theme-switch"
+                  for="theme-toggle"
+                  title="Toggle dark/light mode"
+                >
+                  <span class="visually-hidden">Toggle dark or light mode</span>
+                  <input type="checkbox" id="theme-toggle" v-model="isDark" />
+                  <span class="slider-mood"></span>
+                </label>
+              </div>
+            </div>
 
-            <div>
+            <div class="d-flex">
               <ul id="navbar">
+                <li class="nav-links"><a href="index.html">Home</a></li>
                 <li class="nav-links">
-                  <a class="active" href="index.html">Home</a>
+                  <a class="active" href="shop.html">Shop</a>
                 </li>
-                <li class="nav-links"><a href="shop.html">Shop</a></li>
                 <li class="nav-links"><a href="blog.html">Blog</a></li>
                 <li class="nav-links"><a href="about.html">About</a></li>
                 <li class="nav-links"><a href="contact.html">Contact</a></li>
               </ul>
-            </div>
-
-            <div class="theme-switch-wrapper">
-              <label
-                class="theme-switch"
-                for="theme-toggle"
-                title="Toggle dark/light mode"
-              >
-                <span class="visually-hidden">Toggle dark or light mode</span>
-                <input type="checkbox" id="theme-toggle" v-model="isDark" />
-                <span class="slider-mood"></span>
-              </label>
             </div>
           </div>
         </nav>
