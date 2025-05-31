@@ -252,17 +252,21 @@ a.active::after {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.pro .btncart {
+.pro .bi {
   transition: 0.5s;
-  padding: 0 46%;
-  line-height: 40px;
+  padding: 3% 30%;
+  margin: 10%;
   border-radius: 12px;
   background-color: #ffffff;
   color: var(--header-text);
   text-align: center;
+  line-height: 40px;
+  height: 10px;
+  vertical-align: middle;
+  line-height: normal;
 }
-.pro .btncart:hover,
-.pro .btncart:active {
+.pro .bi:hover,
+.pro .bi:active {
   transition: 0.5s;
   background-color: var(--hero-gradient1);
   color: #fff;
