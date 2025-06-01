@@ -51,12 +51,6 @@ label {
   color: var(--main-text);
 }
 
-label.required::after {
-  content: "*";
-  color: red;
-  margin-left: 5px;
-}
-
 input,
 textarea {
   padding: 12px 15px;

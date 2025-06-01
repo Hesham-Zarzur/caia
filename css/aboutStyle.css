@@ -1,0 +1,45 @@
+
+.section {
+  margin-bottom: 2%;
+  background-color: #1e1e1e;
+  padding: 1%;
+  border-radius: 10px;
+  border-left: 5px solid #ff6b6b;
+  margin: 30px; 
+}
+
+.section h2 {
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--header-text) !important; 
+  padding-left: 39%;
+  font-size: 200%;
+  
+}
+
+.section p {
+  font-size: 100%;
+  color: #cccccc;
+  margin-bottom: 1%;
+}
+
+.section ul {
+  list-style: none;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.section ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.section ul li::before {
+  content: '✔️';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 110%;
+
+}
