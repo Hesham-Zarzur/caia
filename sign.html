@@ -37,7 +37,7 @@
     />
 
     <!-- Link Vue.js & Jquery -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+   
     <script
       src="https://code.jquery.com/jquery-3.7.1.slim.js"
       integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
@@ -65,67 +65,183 @@
     <title>Caia Home</title>
   </head>
   <body>
-    <div class="container" id="container">
-      <div class="form-container sign-up-container">
-        <form action="#">
-          <h1>Create Account</h1>
-          <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+    <header id="header">
+      <nav class="navbar navbar-expand-md">
+        <div class="container">
+          <div
+            class="d-flex w-100 h justify-content-between align-items-center"
+          >
+            <a
+              href="index.html"
+              role="link"
+              class="logo main-text"
+              title="Caia"
+            >
+              <span class="head-text fs-1">C</span>aia
+            </a>
+            <div class="theme-switch-wrapper">
+              <label
+                class="theme-switch"
+                for="theme-toggle"
+                title="Toggle dark/light mode"
+              >
+                <span class="visually-hidden">Toggle dark or light mode</span>
+                <input type="checkbox" id="theme-toggle" v-model="isDark" />
+                <span class="slider-mood"></span>
+              </label>
+            </div>
           </div>
-          <span>or use your email for registration</span>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button>Sign Up</button>
-        </form>
-      </div>
-      <div class="form-container sign-in-container">
-        <form action="#">
-          <h1>Sign in</h1>
-          <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          <div class="d-flex">
+            <ul id="navbar">
+              <li class="nav-links">
+                <a class="active" href="index.html">Home</a>
+              </li>
+              <li class="nav-links"><a href="shop.html">Shop</a></li>
+              <li class="nav-links"><a href="blog.html">Blog</a></li>
+              <li class="nav-links"><a href="about.html">About</a></li>
+              <li class="nav-links"><a href="contact.html">Contact</a></li>
+            </ul>
           </div>
-          <span>or use your account</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-          <button>Sign In</button>
-        </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1>Welcome Back!</h1>
-            <p>
-              To keep connected with us please login with your personal info
-            </p>
-            <button class="ghost" id="signIn">Sign In</button>
-          </div>
-          <div class="overlay-panel overlay-right">
-            <h1>Hello, Friend!</h1>
-            <p>Enter your personal details and start journey with us</p>
-            <button class="ghost" id="signUp">Sign Up</button>
+        </div>
+      </nav>
+    </header>
+
+    <section id="sign">
+      <div  class="containerr" id="container">
+        <div class="form-container sign-up-container">
+          <form id="SignUp" action="#">
+            <h1 class="head-text">Create Account</h1>
+            <div class="social-container">
+              <a href="#" class="social fab fa-facebook-f"></a>
+              <a href="#" class="social fab fa-google-plus-g"></a>
+            </div>
+            <span class="head-text">or use your email for registration</span>
+            <input type="text" placeholder="Name" required/>
+            <input type="email" placeholder="Email" required/>
+            <input type="password" placeholder="Password" required/>
+            <button>Sign Up</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <form id="SignIn" action="#">
+            <h1 class="head-text">Sign in</h1>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social fab fa-google-plus-g"></a>
+            </div>
+            <span class="head-text">or use your account</span>
+            <input type="email" placeholder="Email" required/>
+            <input type="password" placeholder="Password" required/>
+            <a class="main-text text-decoration-none" href="#">Forgot your password?</a>
+            <button>Sign In</button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1 class="wmain-text">Hello, Friend!</h1>
+              <h6 class="wmain-text my-3 ">
+                To keep connected with us please login with your personal info
+              </h6>
+              <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1 class="wmain-text">Welcome Back!</h1>
+              <h6 class="wmain-text my-3">Enter your personal details and start journey with us</h6>
+              <button class="ghost" id="signUp">Sign Up</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <script>
-      const signUpButton = document.getElementById("signUp");
-      const signInButton = document.getElementById("signIn");
-      const container = document.getElementById("container");
-
-      signUpButton.addEventListener("click", () => {
-        container.classList.add("right-panel-active");
+    <footer class="">
+        <div class="container">
+          <div class="row g-3">
+            <!-- Logo -->
+            <div  class="col-12 mt-0">
+                <a href="index.html" role="link" class="logo main-text fs-2 " title="Caia">
+              <span class="head-text fs-1">C</span>aia
+            </a>
+            </div>
+          
+            <!-- Contact -->
+            <div data-aos="fade-right"
+                data-aos-easing="linear"
+                data-aos-duration="1500" class="col-12 col-md-6 col-lg-4">
+              <h4 class="head-text fs-2">Contact</h4>
+              <p class="fs-5 main-text"><span class="head-text fs-4 fw-bolder">Address : </span>Wallington Road, Street 32, San Francisco</p>
+              <p class="fs-5 main-text"><span class="head-text fs-4 fw-bolder">Phone: </span>123-456-789</p>
+              <p class="fs-5 main-text"><span class="head-text fs-4 fw-bolder">Hours: </span>10:00 - 18:00, Mon - Sat</p>
+            </div>
+            
+            <!-- About Us -->
+            <div data-aos="fade-right"
+                 data-aos-easing="linear"
+                data-aos-duration="1500" class="col-12 col-md-6 col-lg-4">
+              <h4 class="head-text fs-2">CAIA Store</h4>
+              <a class ="f-link main-text fs-4 fw-bolder" href="#">About Us</a>
+              <a class ="f-link main-text fs-4 fw-bolder" href="#">Contact Us</a>
+              <a class ="f-link main-text fs-4 fw-bolder" href="#">Privacy Policy</a>
+              <a class ="f-link main-text fs-4 fw-bolder" href="#">Terms & Conditions</a>
+              <a class ="f-link main-text fs-4 fw-bolder" href="#">Delivery Information</a>
+            </div>
+          
+            <!-- follow -->
+            <div data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500" class="col-12 col-lg-4">
+              <div class="follow">
+                <h4 class="head-text fs-2 text-center">Follow Us</h4>
+                <div class="icon">
+                  <a href="/" class="f-icon fs-1 bi bi-facebook"></a>
+                  <a href="/" class="f-icon fs-1 bi bi-twitter"></a>
+                  <a href="/" class="f-icon fs-1 bi bi-instagram"></a>
+                  <a href="/" class="f-icon fs-1 bi bi-youtube"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="line mb-2"></div>
+          <p class="head-text text-center m-0 fs-5 pb-2 ">&copy; CAIA STORE 2025 </p>
+        </div>
+      </footer>
+    <script src="JS/script.js"></script>
+     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module">
+      const app = Vue.createApp({
+        data() {
+          return {
+            isDark: localStorage.getItem("theme") === "dark" ? true : false
+,
+          };
+        },
+        watch: {
+          isDark(newVal) {
+            if (newVal) {
+              document.body.classList.add("dark-mode");
+              localStorage.setItem("theme", "dark");
+              console.log("Dark mode enabled");
+              return true;
+            } else {
+              document.body.classList.remove("dark-mode");
+              localStorage.setItem("theme", "light");
+              console.log("Light mode enabled");
+              return false;
+            }
+          },
+        },
+        mounted() {
+          AOS.init();
+          if (this.isDark) {
+            document.body.classList.add("dark-mode");
+          }
+        },
+        methods: {},
       });
-
-      signInButton.addEventListener("click", () => {
-        container.classList.remove("right-panel-active");
-      });
+      app.mount("#app");
+    </script>
+      
     </script>
   </body>
 </html>

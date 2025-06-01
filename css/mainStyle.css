@@ -261,7 +261,6 @@ a.active::after {
   color: var(--header-text);
   text-align: center;
   line-height: 40px;
-  
 }
 .pro .bi:hover,
 .pro .bi:active {
@@ -312,6 +311,7 @@ a.active::after {
 }
 
 footer {
+  flex-grow: 1;
   background-color: var(--bg);
   color: var(--header-text);
   padding: 30px 0 0 0;
