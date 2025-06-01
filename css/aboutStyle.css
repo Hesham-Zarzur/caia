@@ -1,4 +1,4 @@
-
+/*
 .section {
   margin-bottom: 2%;
   background-color: #1e1e1e;
@@ -43,3 +43,247 @@
   font-size: 110%;
 
 }
+*/
+.section {
+  padding: 60px 20px;
+  margin-bottom: 1%;
+
+}
+
+.about-hero__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  border-radius: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background-color: var(--background);
+  padding: 40px;
+}
+
+.grid__item {
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.grid__item--tablet-up-half {
+  flex: 1 1 50%;
+}
+
+.section-heading__kicker,
+.heading{
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--header-text) !important;
+}
+
+.section-heading__kicker {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.subhead {
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--main-text) !important;
+}
+
+.section-label {
+  color: #008060;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--header-text) !important;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #212121;
+  margin-bottom: 20px;
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--header-text) !important;
+}
+.section-desc {
+  font-size: 16px;
+  color: #666;
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--main-text) !important;
+}
+
+.image-box {
+  flex: 1 1 45%;
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.about-hero__image-spill img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.shopBtn {
+  display: inline-block;
+  background-image: url('../assets/img/button-o.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  width: 180px; 
+  height: 60px;  
+  line-height: 60px;
+  transition: 0.3s ease-in-out;
+}
+
+.shopBtn:hover {
+  background-image: url(../assets/img/button-w.png);
+  color: var(--header-text);
+  transition: 0.5s ease-in-out;
+}
+
+
+.caia-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 40px;
+  margin: 10% 0 0 0;
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--header-text) !important;
+}
+
+.text-box {
+  flex: 1 1 45%;
+    font-family: "Sour Gummy", sans-serif;
+  color: var(--header-text) !important;
+}
+
+@media (max-width: 768px) {
+  .about-hero__grid {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: initial;
+  }
+
+  .grid__item--tablet-up-half {
+    flex: 1 1 100%;
+  }
+
+  .section-heading__heading {
+    font-size: 28px;
+  }
+
+  .section-heading__subhead {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #1c1c1c;
+}
+
+.mission-section {
+  padding: 21px 11px;
+  text-align: center;
+  width: 100%;
+}
+
+.mission-section .small-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--header-text) !important;
+}
+
+.mission-section .main-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1c1c1c;
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--header-text) !important;
+}
+
+.mission-section .sub-text {
+  font-size: 20px;
+  font-weight: 600; 
+  line-height: 1.8;
+  color: #333;
+  margin: 0 auto;
+  width: 100%;
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--main-text) !important;
+}
+
+.founders-section {
+  padding: 60px 20px;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3%;
+}
+
+.founder-card {
+  text-align: center;
+  transition: transform 0.3s;
+
+}
+
+.founder-card:hover {
+  transform: translateY(-5px);
+}
+
+.founder-img img {
+  width: 55%;
+  height: 239PX;
+  border-radius: 20px;
+}
+
+.founder-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 16px 0 4px 0;
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--header-text) !important;
+}
+
+.founder-title {
+  font-size: 15px;
+  font-weight: 400;
+  color: #555;
+  margin: 0 16px;
+  font-family: "Sour Gummy", sans-serif;
+  color: var(--main-text) !important;
+}
+
