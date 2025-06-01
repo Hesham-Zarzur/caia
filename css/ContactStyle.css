@@ -1,23 +1,12 @@
-:root {
-  --bg: #283b47;
-  --sc-bg: #518f92;
-  --nav: #b1cfbc;
-  --header-text: #bd3a31;
-  --main-text: #a76855;
-  --primary-color: var(--header-text);
-  --hero-gradient1: #bd3a31;
-  --hero-gradient2: #b1cfbc;
-  --hero-gradient3: #518f92;
-  --hero-gradient4: #dbdfc3;
-}
 
 h2 {
   font-size: 1.8em;
   font-weight: 400;
-  color: var(--primary-color);
   text-align: center;
   margin: 50px auto 30px auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Sour Gummy", sans-serif;
+  color: var(--header-text) !important; 
 }
 
 .form-container {
@@ -49,12 +38,6 @@ label {
   font-weight: 600;
   font-size: 1rem;
   color: var(--main-text);
-}
-
-label.required::after {
-  content: "*";
-  color: red;
-  margin-left: 5px;
 }
 
 input,
