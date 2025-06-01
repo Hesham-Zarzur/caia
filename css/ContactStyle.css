@@ -1,11 +1,10 @@
-
 h2 {
   font-size: 1.8em;
   font-weight: 400;
   text-align: center;
   margin: 50px auto 30px auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-family: "Sour Gummy", sans-serif;
+  font-family: "Sour Gummy", sans-serif;
   color: var(--header-text) !important; 
 }
 
@@ -88,4 +87,3 @@ button:hover {
   background-color: var(--header-text);
   color: #fbfbfb;
 }
-
