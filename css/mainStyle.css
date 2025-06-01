@@ -76,14 +76,22 @@ section {
 
 #navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
-  padding: 0.5rem 5%;
+  padding: 0;
   max-width: 1200px;
   margin: 0 auto;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none;
+}
+@media screen and (max-width: 768px) {
+  #navbar {
+    align-items: center;
+  }
+ #navbar li {
+  padding: 0 5px !important;
+}
 }
 
 .logo {
@@ -149,6 +157,16 @@ section {
 a.active::after {
   transform: translateX(-50%) scaleX(1.2);
   transition: transform 1s cubic-bezier(0.4, 2.3, 0.3, 1);
+}
+
+.user{
+  color: var(--main-text);
+  text-decoration: none;
+  transition: 1s linear;
+  &:hover,
+  &:active {
+    color: var(--header-text);
+  }
 }
 
 .theme-switch-wrapper {
@@ -285,7 +303,7 @@ a.active::after {
   justify-content: center;
   align-items: flex-end;
 }
-#newsletter form input {
+form input {
   color: var(--main-text);
   background-color: #00000000;
   border: var(--header-text) 2px solid;

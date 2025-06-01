@@ -58,7 +58,6 @@
 
     <title>Caia Home</title>
   </head>
-
   <body>
     <div id="app">
       <!-- header -->
@@ -81,20 +80,14 @@
               </label>
             </div>
             </div>
-            <div class="d-flex ">
-            
-              
-
-              <ul id="navbar">
+            <ul id="navbar">
                 <li class="nav-links"><a class="active" href="index.html">Home</a></li>
                 <li class="nav-links"><a href="shop.html">Shop</a></li>
                 <li class="nav-links"><a href="blog.html">Blog</a></li>
                 <li class="nav-links"><a href="contact.html">Contact</a></li>
                 <li class="nav-links"><a href="about.html">About</a></li>
+                <li class=""><a class="user bi bi-person-circle fs-2" href="sign.html"></a></li>
               </ul>
-            
-            </div>
-            
           </div>
         </nav>
       </header>
@@ -146,7 +139,7 @@
               <div data-aos="zoom-out" class="pro card">
                 <div v-if="product.status === 'new'" class="ribbon">
                   <span>New</span>
-                 </div>
+                </div>
                   <img loading="lazy" v-bind:src="product.url" alt="" />
                   <div class="card-body">
                     <h5 class="card-title head-text fs-4" v-text="product.name" ></h5>
