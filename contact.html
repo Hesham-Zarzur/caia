@@ -93,103 +93,125 @@
                 </label>
               </div>
             </div>
-            <div class="d-flex">
-              <ul id="navbar">
-                <li class="nav-links"><a href="index.html">Home</a></li>
-                <li class="nav-links"><a href="shop.html">Shop</a></li>
-                <li class="nav-links"><a href="blog.html">Blog</a></li>
-                <li class="nav-links">
-                  <a class="active" href="contact.html">Contact</a>
-                </li>
-                <li class="nav-links"><a href="about.html">About</a></li>
-                <li class="bi bi-person-circle fs-2"></li>
-                <li class="bi bi-shop fs-2"></li>
-              </ul>
-            </div>
+            <ul id="navbar">
+              <li class="nav-links">
+                <a href="index.html">Home</a>
+              </li>
+              <li class="nav-links"><a href="shop.html">Shop</a></li>
+              <li class="nav-links"><a href="blog.html">Blog</a></li>
+              <li class="nav-links">
+                <a class="active" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-links"><a href="about.html">About</a></li>
+              <li class="">
+                <a class="user bi bi-person-circle fs-2" href="sign.html"></a>
+              </li>
+            </ul>
           </div>
         </nav>
       </header>
 
       <!-- Contact Us Section -->
-      <section class="contact-us">
+      <section id="contact-us">
         <div class="container">
-        <h1 class="head-text fs-1 mb-5 text-center">CONTACT US</h1>
-        <form class="form-container"  method="" action="">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col-12">
-                  <!--name -->
-              <div class="form-floating">
-                <input
-                id="name"
-                name="name"
-                class="my-inp"
-                type="text"
-                placeholder="Type your full name"
-                required
-                />
-                <label for="name">Name</label>
-              </div>
+          <h1 class="head-text fs-1 mb-5 text-center">CONTACT US</h1>
+          <form method="" action="">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <!--name -->
+                    <div
+                      data-aos="fade-right"
+                      data-aos-easing="linear"
+                      data-aos-duration="1000"
+                      class="form-floating"
+                    >
+                      <input
+                        id="name"
+                        name="name"
+                        class="myinput form-control continput"
+                        type="text"
+                        pattern="^[a-zA-Z\s]+$"
+                        title="Please enter a valid name (letters and spaces only)"
+                        required
+                      />
+                      <label for="name">Name</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <!--Email -->
+                    <div
+                      data-aos="fade-right"
+                      data-aos-easing="linear"
+                      data-aos-duration="1700"
+                      class="form-floating"
+                    >
+                      <input
+                        id="email"
+                        name="email"
+                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                        class="myinput form-control continput"
+                        type="email"
+                        required
+                      />
+                      <label for="email">Email</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <!-- Mobile -->
+                    <div
+                      data-aos="fade-right"
+                      data-aos-easing="linear"
+                      data-aos-duration="2500"
+                      class="form-floating"
+                    >
+                      <input
+                        id="mobile"
+                        name="mobile"
+                        class="myinput form-control continput"
+                        type="tel"
+                        pattern="^\d{10}$"
+                        title="Please enter a valid 10-digit mobile number"
+                        required
+                      />
+                      <label for="mobile">Mobile</label>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-12">
-                  <!--Email -->
-              <div class="form-floating">
-                <input
-                id="email"
-                name="email"
-                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                class="my-inp"
-                type="email"
-                placeholder="Type your email address"
-                required
-                />
-                <label  for="email">Email</label>
               </div>
-                </div>
-                <div class="col-12">
-                  <!-- Mobile -->
-                  <div class="form-floating">
-                    <input
-                    id="mobile"
-                    name="mobile"
-                    class="my-inp"
-                    type="tel"
-                    placeholder="Type your mobile number"
+              <div class="col-12 col-md-6 mt-3 mt-md-0">
+                <!-- Message -->
+                <div
+                  data-aos="flip-right"
+                  data-aos-easing="linear"
+                  data-aos-duration="2500"
+                  class="form-floating message-box"
+                >
+                  <textarea
+                    id="message"
+                    class="myinput message"
+                    name="message"
+                    max="1024"
                     required
-                    />
-                    <label  for="mobile">Mobile</label>
+                  ></textarea>
+                  <label for="message">Message</label>
+                </div>
+                <div class="d-flex justify-content-end mt-2">
+                  <button type="submit" class="sendbtn head-text">SEND</button>
                 </div>
               </div>
-              </div>
-          </div>
-            <div class="col-12 col-md-6">
-              <div class="form-floating message-box">
-                <label  for="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Type your message here..."
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="submitbtn head-text">SEND</button>
             </div>
-          </div>
-        </form>
+          </form>
         </div>
       </section>
+
       <!-- footer -->
       <footer class="">
         <div class="container">
           <div class="row g-3">
             <!-- Logo -->
-            <div
-              data-aos="fade-right"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
-              class="col-12"
-            >
+            <div class="col-12">
               <a
                 href="index.html"
                 role="link"
@@ -201,12 +223,7 @@
             </div>
 
             <!-- Contact -->
-            <div
-              data-aos="fade-right"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
-              class="col-12 col-md-6 col-lg-4"
-            >
+            <div class="col-12 col-md-6 col-lg-4">
               <h4 class="head-text fs-2">Contact</h4>
               <p class="fs-5 main-text">
                 <span class="head-text fs-4 fw-bolder">Address : </span
@@ -222,12 +239,7 @@
             </div>
 
             <!-- About Us -->
-            <div
-              data-aos="fade-right"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
-              class="col-12 col-md-6 col-lg-4"
-            >
+            <div class="col-12 col-md-6 col-lg-4">
               <h4 class="head-text fs-2">CAIA Store</h4>
               <a class="f-link main-text fs-4 fw-bolder" href="#">About Us</a>
               <a class="f-link main-text fs-4 fw-bolder" href="#">Contact Us</a>
@@ -243,12 +255,7 @@
             </div>
 
             <!-- follow -->
-            <div
-              data-aos="fade-up"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
-              class="col-12 col-lg-4"
-            >
+            <div class="col-12 col-lg-4">
               <div class="follow">
                 <h4 class="head-text fs-2 text-center">Follow Us</h4>
                 <div class="icon">
@@ -267,7 +274,8 @@
         </div>
       </footer>
     </div>
-    <script src="JS/script.js"></script>
+
+    <!-- <script src="JS/script.js"></script> -->
     <script type="module">
       import navBar from "./JS/Components/navBar.js";
       import mineFooter from "./JS/Components/mineFooter.js";
@@ -275,146 +283,6 @@
         data() {
           return {
             isDark: localStorage.getItem("theme") === "dark",
-            images: [
-              "assets/img/products/f1.png",
-              "assets/img/products/f2.png",
-              "assets/img/products/f3.png",
-              "assets/img/products/f4.png",
-              "assets/img/products/f5.png",
-            ],
-            currentIndex: 0,
-            features: [
-              {
-                name: "Free Shipping",
-                url: "assets/img/features/f1.png",
-                darkurl: "assets/img/features/d-f1.png",
-              },
-              {
-                name: "Online Order",
-                url: "assets/img/features/f2.png",
-                darkurl: "assets/img/features/d-f2.png",
-              },
-              {
-                name: "Save Money",
-                url: "assets/img/features/f3.png",
-                darkurl: "assets/img/features/d-f3.png",
-              },
-              {
-                name: "Promotions",
-                url: "assets/img/features/f4.png",
-                darkurl: "assets/img/features/d-f4.png",
-              },
-              {
-                name: "Happy Sale",
-                url: "assets/img/features/f5.png",
-                darkurl: "assets/img/features/d-f5.png",
-              },
-              {
-                name: "24/7 Support",
-                url: "assets/img/features/f6.png",
-                darkurl: "assets/img/features/d-f6.png",
-              },
-            ],
-            products: [
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/f1.png",
-                price: "$85",
-                quantity: 10,
-                status: "old",
-              },
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/f2.png",
-                price: "$85",
-                quantity: 10,
-                status: "old",
-              },
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/f3.png",
-                price: "$85",
-                quantity: 10,
-                status: "old",
-              },
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/f4.png",
-                price: "$85",
-                quantity: 10,
-                status: "old",
-              },
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/f5.png",
-                price: "$85",
-                quantity: 10,
-                status: "old",
-              },
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/f6.png",
-                price: "$99",
-                quantity: 10,
-                status: "new",
-              },
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/f7.png",
-                price: "$54",
-                quantity: 10,
-                status: "old",
-              },
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/f8.png",
-                price: "$35",
-                quantity: 10,
-                status: "new",
-              },
-            ],
-            nproducts: [
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/n1.png",
-                price: "$85",
-                quantity: 10,
-                status: "new",
-              },
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/n2.png",
-                price: "$85",
-                quantity: 10,
-                status: "new",
-              },
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/n3.png",
-                price: "$85",
-                quantity: 10,
-                status: "new",
-              },
-              {
-                brand: "Brand name",
-                name: "Product name",
-                url: "assets/img/products/n4.png",
-                price: "$85",
-                quantity: 10,
-                status: "new",
-              },
-            ],
           };
         },
         watch: {

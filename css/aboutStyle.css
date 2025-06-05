@@ -1,53 +1,6 @@
-/*
-.section {
-  margin-bottom: 2%;
-  background-color: #1e1e1e;
-  padding: 1%;
-  border-radius: 10px;
-  border-left: 5px solid #ff6b6b;
-  margin: 30px; 
-}
-
-.section h2 {
-  font-family: "Sour Gummy", sans-serif;
-  color: var(--header-text) !important; 
-  padding-left: 39%;
-  font-size: 200%;
-  
-}
-
-.section p {
-  font-size: 100%;
-  color: #cccccc;
-  margin-bottom: 1%;
-}
-
-.section ul {
-  list-style: none;
-  padding-left: 10px;
-  margin-bottom: 10px;
-}
-
-.section ul li {
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 15px;
-  color: #e0e0e0;
-}
-
-.section ul li::before {
-  content: '✔️';
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 110%;
-
-}
-*/
 .section {
   padding: 60px 20px;
   margin-bottom: 1%;
-
 }
 .about-hero__grid {
   display: flex;
@@ -58,7 +11,7 @@
   margin: auto;
   border-radius: 40px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  background-color: var(--background);
+  background-color: var(--bg);
   padding: 40px;
 }
 
@@ -72,7 +25,7 @@
 }
 
 .section-heading__kicker,
-.heading{
+.heading {
   font-family: "Sour Gummy", sans-serif;
   color: var(--header-text) !important;
 }
@@ -80,13 +33,6 @@
 .section-heading__kicker {
   font-size: 30px;
   margin-bottom: 10px;
-}
-
-.heading {
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 1.4;
-  margin-bottom: 20px;
 }
 
 .subhead {
@@ -121,13 +67,14 @@
   color: var(--main-text) !important;
 }
 
-.image-box {
-  flex: 1 1 45%;
-}
-
-.image-box img {
+.img-box {
+  background-image: url(../assets/img/about/about1.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
-  border-radius: 8px;
+  height: 400px;
+  border-radius: 20px;
 }
 
 .about-hero__image-spill img {
@@ -138,25 +85,20 @@
 }
 
 .shopBtn {
-  display: inline-block;
-  background-image: url('../assets/img/button-o.png');
+  background-image: url(../assets/img/button-o.png);
   background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
-  color: white;
-  text-align: center;
   text-decoration: none;
-  width: 180px; 
-  height: 60px;  
-  line-height: 60px;
-  transition: 0.3s ease-in-out;
+  color: var(--nav);
+  padding: 15px 90px;
+  transition: 0.5s ease-in-out;
 }
-
 .shopBtn:hover {
   background-image: url(../assets/img/button-w.png);
   color: var(--header-text);
   transition: 0.5s ease-in-out;
 }
-
 
 .caia-grid {
   display: flex;
@@ -170,7 +112,7 @@
 
 .text-box {
   flex: 1 1 45%;
-    font-family: "Sour Gummy", sans-serif;
+  font-family: "Sour Gummy", sans-serif;
   color: var(--header-text) !important;
 }
 
@@ -218,7 +160,7 @@
 
 .mission-section .sub-text {
   font-size: 20px;
-  font-weight: 600; 
+  font-weight: 600;
   line-height: 1.8;
   color: #333;
   margin: 0 auto;
@@ -247,7 +189,6 @@
 .founder-card {
   text-align: center;
   transition: transform 0.3s;
-
 }
 
 .founder-card:hover {
@@ -256,7 +197,7 @@
 
 .founder-img img {
   width: 55%;
-  height: 239PX;
+  height: 239px;
   border-radius: 20px;
 }
 
@@ -276,4 +217,3 @@
   font-family: "Sour Gummy", sans-serif;
   color: var(--main-text) !important;
 }
-

@@ -35,30 +35,3 @@
 //   showMoreBtn.style.display = "none";
 // };
 // /------------------------------- sign page -------------------------------/
-const signUpButton = document.getElementById("signUp");
-const signInButton = document.getElementById("signIn");
-const container = document.getElementById("container");
-
-signUpButton.addEventListener("click", () => {
-  container.classList.add("right-panel-active");
-});
-
-signInButton.addEventListener("click", () => {
-  container.classList.remove("right-panel-active");
-});
-// Dark mode toggle
-const themeToggle = document.getElementById("theme-toggle");
-const isDark = localStorage.getItem("isDark") === "true";
-
-themeToggle.checked = isDark;
-document.body.classList.toggle("dark-mode", isDark);
-themeToggle.addEventListener("change", () => {
-  const isDarkMode = themeToggle.checked;
-  document.body.classList.toggle("dark-mode", isDarkMode);
-  localStorage.setItem("isDark", isDarkMode);
-});
-// Initialize AOS
-AOS.init({
-  duration: 1200,
-  once: true,
-});
