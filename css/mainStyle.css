@@ -95,10 +95,24 @@ section {
 }
 
 .logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--main-text) !important;
   text-decoration: none;
-  transition: 0.5s;
-  font-size: 3em;
-  letter-spacing: 1.5px;
+  &:hover {
+    animation: pulse 2s infinite;
+    color: var(--header-text) !important;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
 }
 
 #navbar li {

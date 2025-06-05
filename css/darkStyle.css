@@ -94,4 +94,6 @@ body.dark-mode footer .line {
   transition: transform 0.5s linear;
 }
 
-/* -----------------------|shop page| ----------------------------- */
+body.dark-mode .btn-custom:hover {
+  box-shadow: 0 20px 40px rgba(189, 152, 49, 0.25);
+}
