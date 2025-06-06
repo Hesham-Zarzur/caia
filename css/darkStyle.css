@@ -28,8 +28,8 @@ body.dark-mode .pro {
   background: rgba(68, 68, 68, 0.41);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4.4px);
   -webkit-backdrop-filter: blur(4.4px);
+  backdrop-filter: blur(4.4px);
   border: 0;
 }
 
@@ -37,8 +37,8 @@ body.dark-mode .pro:hover {
   background: rgba(0, 0, 0, 0.41);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(11.2px);
   -webkit-backdrop-filter: blur(11.2px);
+  backdrop-filter: blur(11.2px);
 }
 
 body.dark-mode .pro img {

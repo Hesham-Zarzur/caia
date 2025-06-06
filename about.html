@@ -100,16 +100,12 @@
               </div>
             </div>
             <ul id="navbar">
-              <li class="nav-links">
-                <a class="active" href="index.html">Home</a>
-              </li>
+              <li class="nav-links"><a  href="index.html">Home</a></li>
               <li class="nav-links"><a href="shop.html">Shop</a></li>
               <li class="nav-links"><a href="blog.html">Blog</a></li>
               <li class="nav-links"><a href="contact.html">Contact</a></li>
-              <li class="nav-links"><a href="about.html">About</a></li>
-              <li class="">
-                <a class="user bi bi-person-circle fs-2" href="sign.html"></a>
-              </li>
+              <li class="nav-links"><a class="active" href="about.html">About</a></li>
+              <li><a class="user bi bi-person-circle fs-2" href="sign.html"></a></li>
             </ul>
           </div>
         </nav>
@@ -125,7 +121,6 @@
             data-aos-duration="2000"
           >
             <div class="section-heading gutter-bottom--reset">
-              <p class="section-heading__kicker heading--5">About us</p>
               <h1 class="heading">
                 Welcome to Caia — Your Trusted Online Store.
               </h1>
@@ -321,7 +316,6 @@
         </div>
       </footer>
     </div>
-    <script src="JS/script.js"></script>
     <script type="module">
       import navBar from "./JS/Components/navBar.js";
       import mineFooter from "./JS/Components/mineFooter.js";
@@ -329,13 +323,6 @@
         data() {
           return {
             isDark: localStorage.getItem("theme") === "dark",
-            images: [
-              "assets/img/products/f1.png",
-              "assets/img/products/f2.png",
-              "assets/img/products/f3.png",
-              "assets/img/products/f4.png",
-              "assets/img/products/f5.png",
-            ],
           };
         },
         watch: {

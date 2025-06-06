@@ -68,16 +68,14 @@
     <header id="header">
       <nav class="navbar navbar-expand-md">
         <div class="container">
-          <div
-            class="d-flex w-100 h justify-content-between align-items-center"
-          >
+          <div class="d-flex w-100 justify-content-between align-items-center">
             <a
               href="index.html"
               role="link"
               class="logo main-text"
               title="Caia"
             >
-              <span class="head-text fs-1">C</span>aia
+              <span class="head-text">C</span>aia
             </a>
             <div class="theme-switch-wrapper">
               <label
@@ -91,17 +89,21 @@
               </label>
             </div>
           </div>
-          <div class="d-flex">
-            <ul id="navbar">
-              <li class="nav-links">
-                <a class="active" href="index.html">Home</a>
-              </li>
-              <li class="nav-links"><a href="shop.html">Shop</a></li>
-              <li class="nav-links"><a href="blog.html">Blog</a></li>
-              <li class="nav-links"><a href="about.html">About</a></li>
-              <li class="nav-links"><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
+          <ul id="navbar">
+            <li class="nav-links">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="nav-links"><a href="shop.html">Shop</a></li>
+            <li class="nav-links"><a href="blog.html">Blog</a></li>
+            <li class="nav-links"><a href="contact.html">Contact</a></li>
+            <li class="nav-links"><a href="about.html">About</a></li>
+            <li class="">
+              <a
+                class="user head-text bi bi-person-circle fs-2"
+                href="sign.html"
+              ></a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -252,6 +254,7 @@
       signInButton.addEventListener("click", () => {
         container.classList.remove("right-panel-active");
       });
+
       // Dark mode toggle
       const themeToggle = document.getElementById("theme-toggle");
       const isDark = localStorage.getItem("isDark") === "true";

@@ -176,7 +176,7 @@ a.active::after {
 .user {
   color: var(--main-text);
   text-decoration: none;
-  transition: 0.5s linear;
+  transition: 0.5s ease;
   &:hover,
   &:active {
     color: var(--header-text);
